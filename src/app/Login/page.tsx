@@ -21,12 +21,12 @@ function Login() {
     }
   }, [user])
 
-  const onLogin = async () =>{
+  const onLogin = async () => {
     try {
       setLoading(true);
       const response = await axios.post("api/users/Login", user);
       console.log("Login success", response.data);
-      router.push(`/profile/${response.data.username}`);
+      router.push(`/profile`);
     } catch (error:any) {
       console.log("Login failed");
       throw error;

@@ -4,7 +4,12 @@ import { NextRequest, NextResponse } from "next/server"
 import bcryptjs from "bcryptjs"
 import jwt from "jsonwebtoken"
 
-connect()
+async function connecting(){
+    console.log("Inside Connecting")
+    await connect()
+    console.log("Ending Connecting")
+}
+connecting();
 
 export async function POST(request: NextRequest){
     try{
